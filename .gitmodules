@@ -1,3 +1,7 @@
 [submodule "mechanic-api"]
 	path = mechanic-api
 	url = https://github.com/G-suseJ-niveK/mechanic-api.git
+
+[submodule "mechanic-front"]
+	path = mechanic-front
+	url = https://github.com/G-suseJ-niveK/mechanic-front.git
