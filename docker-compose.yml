@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  mechanic-api:
+    container_name: mechanic-api
+    build:
+      context: ./mechanic-api
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    ports:
+      - 8006:5000
+    volumes:
+      - ./mechanic-api:/var/api
+
+  mechanic-front:
+    stdin_open: true
+    container_name: mechanic-front
+    build:
+      context: ./mechanic-front
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 3002:3000
+    links:
+      - mechanic-api
+    depends_on:
+      - mechanic-api
+    volumes:
+      - ./mechanic-front:/var/front
