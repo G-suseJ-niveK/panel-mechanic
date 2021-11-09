@@ -1,0 +1,3 @@
+[submodule "mechanic-api"]
+	path = mechanic-api
+	url = https://github.com/G-suseJ-niveK/mechanic-api.git
