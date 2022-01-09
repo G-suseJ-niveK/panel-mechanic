@@ -10,7 +10,7 @@ services:
     stdin_open: true
     tty: true
     ports:
-      - 8006:5000
+      - 8015:5000
     volumes:
       - ./mechanic-api:/var/api
 
@@ -19,10 +19,10 @@ services:
     container_name: mechanic-front
     build:
       context: ./mechanic-front
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-dev
     restart: unless-stopped
     ports:
-      - 3002:3000
+      - 3004:3000
     links:
       - mechanic-api
     depends_on:
